@@ -1,0 +1,300 @@
+/* === Google Fonts: Lora (Serif) & Inter (Sans-serif) === */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+
+/* === নতুন কফি-থিম কালার প্যালেট === */
+:root {
+    --primary-font: 'Inter', 'Hind Siliguri', sans-serif;
+    --secondary-font: 'Lora', serif;
+    
+    --bg-color: #F5F5F5; /* হালকা ধূসর ব্যাকগ্রাউন্ড */
+    --surface-color: #FFFFFF; /* কার্ড এবং সারফেসের রঙ */
+    
+    --primary-brand-color: #6D4C41; /* ডিপ কফি ব্রাউন */
+    --secondary-brand-color: #A1887F; /* হালকা কফি ব্রাউন */
+    --accent-color: #FFC107; /* উজ্জ্বল হলুদ (অ্যাকসেন্ট) */
+    
+    --text-dark: #000000; /* সমস্ত টেক্সট কালো */
+    --text-light: #333333; /* হালকা ধূসর টেক্সট */
+    
+    --status-danger: #D32F2F; /* লাল (এক্সপায়ার্ড) */
+    --status-warning: #FFA000; /* কমলা (শীঘ্রই এক্সপায়ার হবে) */
+    --status-success: #388E3C; /* সবুজ (ঠিক আছে) */
+
+    --border-radius: 12px;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* === বেসিক স্টাইল === */
+body {
+    background-color: var(--bg-color);
+    font-family: var(--primary-font);
+    color: #000000; /* সমস্ত টেক্সট কালো */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* === বাটন স্টাইল === */
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 10px 22px;
+    transition: all 0.3s ease;
+    border: none;
+}
+.btn-primary {
+    background-color: var(--primary-brand-color);
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #000000; /* সমস্ত টেক্সট কালো */
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+.btn-outline-secondary {
+    border: 2px solid var(--secondary-brand-color);
+    color: var(--primary-brand-color);
+    background: transparent;
+}
+.btn-outline-secondary:hover {
+    background-color: var(--secondary-brand-color);
+    color: white;
+}
+
+/* === ড্যাশবোর্ড ডিজাইন === */
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.dashboard-header img.logo {
+    width: 70px;
+    margin-bottom: 10px;
+}
+.dashboard-header h1 {
+    font-family: var(--secondary-font);
+    font-size: 2rem;
+    color: var(--primary-brand-color);
+}
+
+/* === স্ট্যাটাস কার্ড === */
+.stat-card-link {
+    text-decoration: none;
+}
+.stat-card {
+    background: var(--surface-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--secondary-brand-color);
+    height: 100%; /* কার্ডগুলোর উচ্চতা সমান রাখার জন্য */
+}
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+.stat-card h5 {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.stat-card .display-6 {
+    font-weight: 700;
+    color: var(--primary-brand-color);
+}
+.stat-card .text-danger { background-color: var(--status-danger) !important; color: #000000 !important; padding: 5px 10px; border-radius: 5px; display: inline-block; }
+.stat-card .text-warning { background-color: var(--status-warning) !important; color: #000000 !important; padding: 5px 10px; border-radius: 5px; display: inline-block; }
+.stat-card .text-info { color: var(--primary-brand-color) !important; }
+
+/* নির্দিষ্ট স্ট্যাটাস কার্ডের বর্ডার কালার */
+a[href*="expired_today"] .stat-card, a[href*="already_expired"] .stat-card { border-top-color: var(--status-danger); }
+a[href*="expiring_soon"] .stat-card { border-top-color: var(--status-warning); }
+a[href*="expiring_in_30_days"] .stat-card { border-top-color: var(--accent-color); }
+a[href*="all"] .stat-card { border-top-color: var(--primary-brand-color); }
+
+
+/* === মেনু আইটেম === */
+.main-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: #000000; /* সমস্ত টেক্সট কালো */
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+.main-menu-item:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-hover);
+    background-color: var(--primary-brand-color);
+    color: white;
+}
+.main-menu-item:hover .icon-wrapper {
+    background-color: white;
+    color: var(--primary-brand-color);
+}
+.main-menu-item:hover .menu-text p, .main-menu-item:hover .menu-text h4 {
+    color: white;
+}
+.main-menu-item .icon-wrapper {
+    font-size: 1.5rem;
+    width: 48px;
+    height: 48px;
+    margin-right: 1rem;
+    color: white;
+    background: var(--primary-brand-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.main-menu-item .menu-text h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+.main-menu-item .menu-text p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+/* === ফর্ম ডিজাইন === */
+.card.shadow-sm {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    background-color: var(--surface-color);
+}
+.form-control, .form-select {
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    background-color: var(--bg-color);
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-brand-color);
+    box-shadow: 0 0 0 3px rgba(109, 76, 65, 0.2);
+    background-color: var(--surface-color);
+}
+
+/* === টেবিল ডিজাইন === */
+.table {
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+.table th {
+    font-weight: 600;
+    color: var(--primary-brand-color);
+}
+.table .item-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.table-danger td { background-color: var(--status-danger); color: #000000; }
+.table-warning td { background-color: var(--status-warning); color: #000000; }
+.table-success td { background-color: var(--status-success); color: #000000; }
+
+/* === লগইন ও রেজিস্টার পেজ === */
+.login-box {
+    background: var(--surface-color);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    margin: 2rem auto;
+}
+.login-box .logo {
+    width: 60px;
+    margin-bottom: 15px;
+}
+.login-box h2 {
+    font-family: var(--secondary-font);
+    color: var(--primary-brand-color);
+    margin-bottom: 10px;
+}
+.login-box .form-control {
+    background-color: var(--bg-color);
+    border: 1px solid #eee;
+}
+.login-box .extra-links a {
+    color: var(--primary-brand-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+.login-box .extra-links a:hover {
+    text-decoration: underline;
+}
+/* === নতুন: বারকোড সার্চ রেজাল্ট কার্ড === */
+.item-result-card {
+    border: 1px solid #eee;
+    box-shadow: var(--shadow);
+}
+.item-result-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.item-result-card .card-body {
+    padding: 1rem;
+}
+.item-result-card .card-title {
+    font-family: var(--secondary-font);
+    font-weight: 600;
+    color: var(--primary-brand-color);
+    margin-bottom: 0.75rem;
+}
+.item-result-card .card-text {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+.item-result-card .card-text strong {
+    color: #000000; /* সমস্ত টেক্সট কালো */
+}
+
+/* === Floating Plus Button === */
+.floating-add-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-brand-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 20px rgba(109, 76, 65, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    z-index: 1000;
+}
+.floating-add-btn:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: 0 6px 25px rgba(109, 76, 65, 0.6);
+}
+.floating-add-btn i {
+    transition: transform 0.3s ease;
+}
+

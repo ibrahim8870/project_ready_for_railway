@@ -1,0 +1,14 @@
+{
+    "name": "cafe-pro/inventory-system",
+    "description": "Cafe Pro - Inventory Management System",
+    "type": "project",
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
